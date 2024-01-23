@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Container from "./Container";
-import axios from "axios";
+import { fetchApi } from "../FetchApi";
 import Flex from "./Flex";
 import { FaAngleDown } from "react-icons/fa6";
 
@@ -8,7 +8,7 @@ const Navber = () => {
   const [nav, setNavber] = useState({});
   useEffect(() => {
     const getData = async () => {
-      const navData = await axios.get("https://bwfc-api.vercel.app/navbar");
+      const navData = await fetchApi("https://bwfc-api.vercel.app/navbar")
 
       setNavber(navData.data);
     };
@@ -40,7 +40,7 @@ const Navber = () => {
                     ))}
                   </ul>
                 )}
-              </li>
+              </li> 
             ))}
           </ul>
 

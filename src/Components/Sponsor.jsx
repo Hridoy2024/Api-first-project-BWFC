@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Container from "./Container";
-import axios from "axios";
+import { fetchApi } from "../FetchApi";
 import Flex from "./Flex";
 
 const Sponsor = () => {
   const [sponsor, Setsponsor] = useState({});
   useEffect(() => {
     const getSponsers = async () => {
-      const sponsorData = await axios.get(
+      const sponsorData = await fetchApi(
         "https://bwfc-api.vercel.app/sponsor"
       );
       Setsponsor(sponsorData.data);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { fetchApi } from "../FetchApi";
 import Container from "./Container";
 import Flex from "./Flex";
 import { IoPlay } from "react-icons/io5";
@@ -9,7 +9,7 @@ const Banner = () => {
 
   useEffect(() => {
     const getBanner = async () => {
-      const bannerData = await axios.get("https://bwfc-api.vercel.app/banner");
+      const bannerData = await fetchApi("https://bwfc-api.vercel.app/banner")
       setBanner(bannerData.data);
     };
 
@@ -51,7 +51,7 @@ const Banner = () => {
           <div className="w-1/2">
             <img
               src={banner.bannerrightimg}
-              className="w-[542px] mt-[78px]"
+              className="w-[542px] mt-[202px] scale-[1.3]"
               alt=""
             />
           </div>
