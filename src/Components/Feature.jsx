@@ -15,10 +15,11 @@ const Feature = () => {
     getFeatureData();
   }, []);
 
-  console.log(feature);
+  // console.log(feature);
 
   return (
-    <div className="mt-[113px] bg-no-repeat bg-cover pb-[179px] " style={{backgroundImage: `url(${feature.featureShape})`}}>
+    <div className="mt-[113px] bg-no-repeat bg-cover pb-[179px] "
+     style={{backgroundImage: `url(${feature.featureShape})`}}>
       <Container>
         <Flex className="items-center justify-center ">
           <div className="w-1/2">

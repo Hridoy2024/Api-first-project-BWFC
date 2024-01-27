@@ -4,6 +4,9 @@ import Banner from './Components/Banner'
 import Sponsor from './Components/Sponsor'
 import Feature from './Components/Feature'
 import Payment from './Components/Payment'
+import Account from './Components/Account'
+import Client from './Components/Client'
+import Resident from './Components/Resident'
 
 const App = () => {
   return (
@@ -13,6 +16,9 @@ const App = () => {
     <Sponsor/>
     <Feature/>
     <Payment/>
+    <Account/>
+    <Client/>
+    <Resident/>
     </>
   )
 }
