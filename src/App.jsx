@@ -7,6 +7,7 @@ import Payment from './Components/Payment'
 import Account from './Components/Account'
 import Client from './Components/Client'
 import Resident from './Components/Resident'
+import Finance from './Components/Finance'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
     <Account/>
     <Client/>
     <Resident/>
+    <Finance/>
     </>
   )
 }
