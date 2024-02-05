@@ -5,6 +5,8 @@ import Flex from "./Flex";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { Rate } from "antd";
+import { GrFormPrevious } from "react-icons/gr";
+import { GrFormNext } from "react-icons/gr";
 
 // Import Swiper styles
 
@@ -24,7 +26,7 @@ const Client = () => {
     getClientData();
   }, []);
 
-  console.log(client.sliderItem);
+  // console.log(client.sliderItem);
 
   return (
     <div className="mt-[129px]">
@@ -37,7 +39,14 @@ const Client = () => {
         <h1 className="font-manrope font-extrabold text-[40px] leading-[48px] text-black tracking-[-3%] w-[390px]">
           {client.title}
         </h1>{" "}
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+        <Swiper
+          navigation={{
+            nextEl: ".button-next-slide",
+            prevEl: ".button-prev-slide",
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
           {client.sliderItem?.map((slide, i) => (
             <SwiperSlide key={i}>
               <Flex>
@@ -73,6 +82,15 @@ const Client = () => {
               </Flex>
             </SwiperSlide>
           ))}
+
+          <div className="flex gap-2">
+            <div className="button-prev-slide h-[34px] w-[34px] bg-primary text-white flex items-center justify-center rounded-full cursor-pointer">
+              <GrFormPrevious />
+            </div>
+            <div className="button-next-slide h-[34px] w-[34px] bg-white text-black flex items-center justify-center rounded-full cursor-pointer">
+              <GrFormNext />
+            </div>
+          </div>
         </Swiper>
       </Container>{" "}
     </div>
